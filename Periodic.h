@@ -16,8 +16,8 @@
  * Lesser General Public License for more details.
  */
 
-#ifndef PERIODIC_HH
-#define PERIODIC_HH
+#ifndef PERIODIC_H
+#define PERIODIC_H
 
 /**
  * Create unique name from given parameter and line number.
