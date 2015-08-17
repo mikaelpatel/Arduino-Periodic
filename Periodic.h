@@ -30,7 +30,7 @@
  * @code
  * void loop()
  * {
- *   periodic(ms) {
+ *   periodic(ms1) {
  *     ...
  *   }
  * }

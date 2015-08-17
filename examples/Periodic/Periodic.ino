@@ -16,53 +16,61 @@
  * Lesser General Public License for more details.
  *
  * @section Description
- * Demo Periodic Blocks.
+ * Demo Arduino Periodic Blocks.
  */
 
 #include <Periodic.h>
 
+extern volatile unsigned long timer0_millis;
+
 void setup()
 {
   Serial.begin(9600);
+
+  // Set millis to check wrap around behavior
+  noInterrupts();
+  timer0_millis = 0xffff8000L;
+  interrupts();
 }
 
 void loop()
 {
-  static uint16_t nr = 0;
-  static uint16_t x = 0;
-  static uint16_t y = 0;
-  static uint16_t z = 0;
+  // Counters for each period
+  static uint16_t x10 = 0;
+  static uint16_t x100 = 0;
+  static uint16_t x1000 = 0;
+  static uint16_t x10000 = 0;
 
   // Delay to simulate some processing
   delay(10);
-  nr += 1;
+  x10 += 1;
 
   // Run every 100 ms
   periodic(100) {
-    x += 1;
+    x100 += 1;
   }
 
   // Run every 1.000 ms
   periodic(1000) {
-    y += 1;
+    x1000 += 1;
   }
 
   // Run every 10.000 ms
   periodic(10000) {
-    z += 1;
+    x10000 += 1;
   }
 
   // Run every 5.000 ms
   periodic(5000) {
     Serial.print(millis());
     Serial.print(' ');
-    Serial.print(nr);
+    Serial.print(x10);
     Serial.print(' ');
-    Serial.print(x);
+    Serial.print(x100);
     Serial.print(' ');
-    Serial.print(y);
+    Serial.print(x1000);
     Serial.print(' ');
-    Serial.print(z);
+    Serial.print(x10000);
     Serial.println();
   }
 }
