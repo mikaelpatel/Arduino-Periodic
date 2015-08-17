@@ -1,5 +1,5 @@
 /**
- * @file Cosa/Periodic.h
+ * @file Periodic.h
  * @version 1.0
  *
  * @section License
@@ -14,8 +14,6 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
  * Lesser General Public License for more details.
- *
- * This file is part of the Arduino Che Cosa project.
  */
 
 #ifndef PERIODIC_HH

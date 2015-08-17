@@ -33,21 +33,26 @@ void loop()
   static uint16_t y = 0;
   static uint16_t z = 0;
 
+  // Delay to simulate some processing
   delay(10);
   nr += 1;
 
+  // Run every 100 ms
   periodic(100) {
     x += 1;
   }
 
+  // Run every 1.000 ms
   periodic(1000) {
     y += 1;
   }
 
+  // Run every 10.000 ms
   periodic(10000) {
     z += 1;
   }
 
+  // Run every 5.000 ms
   periodic(5000) {
     Serial.print(millis());
     Serial.print(' ');
@@ -61,4 +66,3 @@ void loop()
     Serial.println();
   }
 }
-
