@@ -1,5 +1,5 @@
 /**
- * @file Periodic.ino
+ * @file PeriodicDemo.ino
  * @version 1.0
  *
  * @section License
