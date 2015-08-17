@@ -35,7 +35,7 @@
  *   }
  * }
  * @endcode
- * May be used several times in the same block. Creates a unique
+ * May be used several times in the loop block. Creates a unique
  * timer for each instance.
  */
 #define periodic(ms)							\
