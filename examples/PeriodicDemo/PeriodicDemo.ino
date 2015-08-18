@@ -21,16 +21,9 @@
 
 #include <Periodic.h>
 
-extern volatile unsigned long timer0_millis;
-
 void setup()
 {
   Serial.begin(9600);
-
-  // Set millis to check wrap around behavior
-  noInterrupts();
-  timer0_millis = 0xffff8000L;
-  interrupts();
 }
 
 void loop()

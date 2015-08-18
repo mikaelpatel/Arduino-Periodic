@@ -22,7 +22,7 @@
 /**
  * Create unique name from given parameter and line number.
  * @param[in] name of parameter.
- * @return name concatenated with line number.
+ * @return name to concatenated with line number.
  */
 #define __UNIQUE(name) __CONCAT(name,__LINE__)
 
@@ -36,7 +36,7 @@
  *   }
  * }
  * @endcode
- * May be used several times in the loop block. Creates a unique
+ * May be used several times in the loop block. Creates an unique
  * timer for each instance.
  * @param[in] ms period in milli-seconds.
  */
@@ -44,6 +44,6 @@
   static uint32_t __UNIQUE(timer) = 0L;					\
   for (int __UNIQUE(i) = 1;						\
        (__UNIQUE(i) != 0) && ((millis() - __UNIQUE(timer)) >= ms);	\
-       __UNIQUE(i)--, __UNIQUE(timer) = millis())
+       __UNIQUE(i)--, __UNIQUE(timer) += ms)
 
 #endif
