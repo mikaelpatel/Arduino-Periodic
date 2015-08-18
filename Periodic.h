@@ -22,7 +22,7 @@
 /**
  * Create unique name from given parameter and line number.
  * @param[in] name of parameter.
- * @return name to concatenated with line number.
+ * @return name concatenated with line number.
  */
 #define __UNIQUE(name) __CONCAT(name,__LINE__)
 

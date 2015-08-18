@@ -1,5 +1,5 @@
 /**
- * @file PeriodicBlink.ino
+ * @file BlinkWithoutDelay.ino
  * @version 1.0
  *
  * @section License
@@ -16,33 +16,24 @@
  * Lesser General Public License for more details.
  *
  * @section Description
- * Demo Arduino Periodic Blocks: Blink RGB LED.
+ * Classical Blink without Delay example sketch rewritten with
+ * the periodic library.
+ *
+ * @section Reference
+ * 1. https://www.arduino.cc/en/Tutorial/BlinkWithoutDelay
  */
 
 #include <Periodic.h>
 
-static const int RED_LED = 13;
-static const int GREEN_LED = 12;
-static const int BLUE_LED = 11;
+static const int LED = 13;
+static const long INTERVAL = 1000L;
 
 void setup()
 {
-  pinMode(RED_LED, OUTPUT);
-  pinMode(GREEN_LED, OUTPUT);
-  pinMode(BLUE_LED, OUTPUT);
+  pinMode(LED, OUTPUT);
 }
 
 void loop()
 {
-  periodic(250) {
-    digitalWrite(RED_LED, !digitalRead(RED_LED));
-  }
-
-  periodic(500) {
-    digitalWrite(GREEN_LED, !digitalRead(GREEN_LED));
-  }
-
-  periodic(1000) {
-    digitalWrite(BLUE_LED, !digitalRead(BLUE_LED));
-  }
+  periodic(INTERVAL) digitalWrite(LED, !digitalRead(LED));
 }
